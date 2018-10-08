@@ -7,8 +7,8 @@ using System.Linq;
 namespace Learun.Application.CRM
 {
     /// <summary>
-    /// 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架
-    /// Copyright (c) 2013-2018 上海力软信息技术有限公司
+    /// 版 本 V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
     /// 创 建：超级管理员
     /// 日 期：2017-07-11 09:43
     /// 描 述：客户管理

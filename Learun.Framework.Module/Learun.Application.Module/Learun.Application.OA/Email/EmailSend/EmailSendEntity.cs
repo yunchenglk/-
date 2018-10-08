@@ -7,7 +7,7 @@ namespace Learun.Application.OA.Email.EmailSend
     /// <summary>
     /// 版 本 Learun-ADMS V6.1.6.0 力软敏捷开发框架
     /// Copyright (c) 2013-2017 上海力软信息技术有限公司
-    /// 创建人：力软-框架开发组
+    /// 创建人：System
     /// 日 期：2018.06.04
     /// 描 述：邮箱发送
     /// </summary>
