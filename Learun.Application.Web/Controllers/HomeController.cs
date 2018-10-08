@@ -23,7 +23,7 @@ namespace Learun.Application.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         public ActionResult Index()
-        {
+        { 
             string learn_UItheme = WebHelper.GetCookie("Learn_ADMS_V6.1_UItheme");
             switch (learn_UItheme)
             {
