@@ -7265,6 +7265,19 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        });\r\n");
                 sb.Append("    };\r\n");
                 sb.Append("    page.init();\r\n");
+                sb.Append("    var keyitems = $('input');\r\n");
+                sb.Append("    var keyitem = null;\r\n");
+                sb.Append("    for (var i = 0; i < keyitems.length; i++) {\r\n");
+                sb.Append("        keyitem = keyitems[i]; (function () {\r\n");
+                sb.Append("            var next = (i + 1) < keyitems.length ? i + 1 : 0;\r\n");
+                sb.Append("            keyitem.onkeydown = function (event) {\r\n");
+                sb.Append("                var eve = event ? event : window.event;\r\n");
+                sb.Append("                if (eve.keyCode == 13) {\r\n");
+                sb.Append("                    keyitems[next].focus();\r\n");
+                sb.Append("                }\r\n");
+                sb.Append("            }\r\n");
+                sb.Append("        })();\r\n");
+                sb.Append("    }\r\n");
                 sb.Append("}\r\n");
 
                 return sb.ToString();
@@ -7656,6 +7669,19 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        });\r\n");
                 sb.Append("    };\r\n");
                 sb.Append("    page.init();\r\n");
+                sb.Append("    var keyitems = $('input');\r\n");
+                sb.Append("    var keyitem = null;\r\n");
+                sb.Append("    for (var i = 0; i < keyitems.length; i++) {\r\n");
+                sb.Append("        keyitem = keyitems[i]; (function () {\r\n");
+                sb.Append("            var next = (i + 1) < keyitems.length ? i + 1 : 0;\r\n");
+                sb.Append("            keyitem.onkeydown = function (event) {\r\n");
+                sb.Append("                var eve = event ? event : window.event;\r\n");
+                sb.Append("                if (eve.keyCode == 13) {\r\n");
+                sb.Append("                    keyitems[next].focus();\r\n");
+                sb.Append("                }\r\n");
+                sb.Append("            }\r\n");
+                sb.Append("        })();\r\n");
+                sb.Append("    }\r\n");
                 sb.Append("}\r\n");
 
                 return sb.ToString();
@@ -7893,6 +7919,19 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        });\r\n");
                 sb.Append("    };\r\n");
                 sb.Append("    page.init();\r\n");
+                sb.Append("    var keyitems = $('input');\r\n");
+                sb.Append("    var keyitem = null;\r\n");
+                sb.Append("    for (var i = 0; i < keyitems.length; i++) {\r\n");
+                sb.Append("        keyitem = keyitems[i]; (function () {\r\n");
+                sb.Append("            var next = (i + 1) < keyitems.length ? i + 1 : 0;\r\n");
+                sb.Append("            keyitem.onkeydown = function (event) {\r\n");
+                sb.Append("                var eve = event ? event : window.event;\r\n");
+                sb.Append("                if (eve.keyCode == 13) {\r\n");
+                sb.Append("                    keyitems[next].focus();\r\n");
+                sb.Append("                }\r\n");
+                sb.Append("            }\r\n");
+                sb.Append("        })();\r\n");
+                sb.Append("    }\r\n");
                 sb.Append("}\r\n");
 
                 return sb.ToString();
