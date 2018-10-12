@@ -24,7 +24,7 @@ namespace Learun.Application.TwoDevelopment.A_SystemInfo
         /// <summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string companyId, string queryJson)
         {
             try
             {
@@ -40,11 +40,11 @@ namespace Learun.Application.TwoDevelopment.A_SystemInfo
                 t.F_DeleteMark
                 ");
                 strSql.Append("  FROM A_Chargecategory t ");
-                strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  WHERE F_CompanyId = '" + companyId + "' AND 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
-                return this.BaseRepository().FindList<A_ChargecategoryEntity>(strSql.ToString(),dp, pagination);
+                return this.BaseRepository().FindList<A_ChargecategoryEntity>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace Learun.Application.TwoDevelopment.A_SystemInfo
         {
             try
             {
-                this.BaseRepository().Delete<A_ChargecategoryEntity>(t=>t.ID == keyValue);
+                this.BaseRepository().Delete<A_ChargecategoryEntity>(t => t.ID == keyValue);
             }
             catch (Exception ex)
             {

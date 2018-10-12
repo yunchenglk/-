@@ -7,8 +7,10 @@
 var refreshGirdData;
 var bootstrap = function ($, learun) {
     "use strict";
+    var companyId = '';
     var page = {
         init: function () {
+            page.inittree();
             page.initGird();
             page.bind();
         },
@@ -64,6 +66,18 @@ var bootstrap = function ($, learun) {
                 $('#gridtable').jqprintTable();
             });
         },
+        inittree: function () {
+            $('#companyTree').lrtree({
+                url: top.$.rootUrl + '/LR_OrganizationModule/Company/GetTree',
+                param: { parentId: $("#keyid").val() },
+                nodeClick: page.treeNodeClick
+            });
+            //$('#companyTree').lrtreeSet('setValue', '4cdd86d6-9aff-446b-abd1-37ad7d18bc6c');
+        },
+        treeNodeClick: function (item) {
+            companyId = item.id;
+            page.search();
+        },
         // 初始化列表
         initGird: function () {
             $('#gridtable').lrAuthorizeJfGrid({
@@ -111,6 +125,7 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
+            param.companyId = companyId;
             $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
         }
     };

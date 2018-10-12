@@ -20,7 +20,7 @@ namespace Learun.Application.TwoDevelopment.A_SystemInfo
         /// <summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string queryJson);
+        IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string companyId,string queryJson);
         /// <summary>
         /// 获取A_Chargecategory表实体数据
         /// <param name="keyValue">主键</param>

@@ -23,11 +23,11 @@ namespace Learun.Application.TwoDevelopment.A_SystemInfo
         /// <summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<A_ChargecategoryEntity> GetPageList(Pagination pagination, string companyId,string queryJson)
         {
             try
             {
-                return chargecategoryService.GetPageList(pagination, queryJson);
+                return chargecategoryService.GetPageList(pagination, companyId,queryJson);
             }
             catch (Exception ex)
             {

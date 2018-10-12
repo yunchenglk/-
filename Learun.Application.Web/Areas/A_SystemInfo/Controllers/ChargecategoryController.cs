@@ -26,7 +26,8 @@ namespace Learun.Application.Web.Areas.A_SystemInfo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-             return View();
+            ViewBag.parentId = base.getCompanyPid();
+            return View();
         }
         /// <summary>
         /// 表单页
@@ -35,7 +36,7 @@ namespace Learun.Application.Web.Areas.A_SystemInfo.Controllers
         [HttpGet]
         public ActionResult Form()
         {
-             return View();
+            return View();
         }
         #endregion
 
@@ -48,10 +49,10 @@ namespace Learun.Application.Web.Areas.A_SystemInfo.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetPageList(string pagination, string queryJson)
+        public ActionResult GetPageList(string pagination, string companyId, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
-            var data = chargecategoryIBLL.GetPageList(paginationobj, queryJson);
+            var data = chargecategoryIBLL.GetPageList(paginationobj, companyId, queryJson);
             var jsonData = new
             {
                 rows = data,
@@ -69,8 +70,9 @@ namespace Learun.Application.Web.Areas.A_SystemInfo.Controllers
         [AjaxOnly]
         public ActionResult GetFormData(string keyValue)
         {
-            var A_ChargecategoryData = chargecategoryIBLL.GetA_ChargecategoryEntity( keyValue );
-            var jsonData = new {
+            var A_ChargecategoryData = chargecategoryIBLL.GetA_ChargecategoryEntity(keyValue);
+            var jsonData = new
+            {
                 A_Chargecategory = A_ChargecategoryData,
             };
             return Success(jsonData);
@@ -102,7 +104,7 @@ namespace Learun.Application.Web.Areas.A_SystemInfo.Controllers
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             A_ChargecategoryEntity entity = strEntity.ToObject<A_ChargecategoryEntity>();
-            chargecategoryIBLL.SaveEntity(keyValue,entity);
+            chargecategoryIBLL.SaveEntity(keyValue, entity);
             return Success("保存成功！");
         }
         #endregion
