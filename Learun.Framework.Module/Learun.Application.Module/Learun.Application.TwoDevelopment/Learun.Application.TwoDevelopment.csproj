@@ -69,6 +69,10 @@
     <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmService.cs" />
     <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmBLL.cs" />
     <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmIBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataEntity.cs" />
+    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataService.cs" />
+    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

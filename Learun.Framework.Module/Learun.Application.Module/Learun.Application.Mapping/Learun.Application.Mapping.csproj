@@ -123,6 +123,7 @@
     <Compile Include="A_SystemInfo\c_ChargecategoryMap.cs" />
     <Compile Include="A_SystemInfo\A_ChargecategoryMap.cs" />
     <Compile Include="A_SystemInfo\A_Yaopin_KmMap.cs" />
+    <Compile Include="A_SystemInfo\A_Duixiang_CataMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
