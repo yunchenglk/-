@@ -9,9 +9,9 @@ using System.Text;
 namespace Learun.Application.Base.CodeGeneratorModule
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2018.07.17
     /// 描 述：代码生成器类（移动端）
     /// </summary>
@@ -32,8 +32,8 @@ namespace Learun.Application.Base.CodeGeneratorModule
 
             StringBuilder sb = new StringBuilder();
             sb.Append("    /// <summary>\r\n");
-            sb.Append("    /// 版 本 V2.3 辰星软件开发框架\r\n");
-            sb.Append("    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司\r\n");
+            sb.Append("    /// 版 本V2.3 辰星软件开发框架\r\n");
+            sb.Append("    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司\r\n");
             sb.Append("    /// 创 建：" + userInfo.realName + "\r\n");
             sb.Append("    /// 日 期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\r\n");
             sb.Append("    /// 描 述：" + baseInfo.describe + "\r\n");
@@ -1886,8 +1886,8 @@ namespace Learun.Application.Base.CodeGeneratorModule
 
 
                 sb.Append("/*");
-                sb.Append(" * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)\r\n");
-                sb.Append(" * Copyright (c) 2013-2018 上海力软信息技术有限公司\r\n");
+                sb.Append(" * 版 本V2.3 辰星软件开发框架\r\n");
+                sb.Append(" * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司\r\n");
                 sb.Append(" * 创建人：" + userInfo.realName + "\r\n");
                 sb.Append(" * 日  期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\r\n");
                 sb.Append(" * 描  述：" + baseInfo.describe + "\r\n");
@@ -2545,8 +2545,8 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 UserInfo userInfo = LoginUserInfo.Get();
 
                 sb.Append("/*");
-                sb.Append(" * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)\r\n");
-                sb.Append(" * Copyright (c) 2013-2018 上海力软信息技术有限公司\r\n");
+                sb.Append(" * 版 本V2.3 辰星软件开发框架\r\n");
+                sb.Append(" * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司\r\n");
                 sb.Append(" * 创建人：" + userInfo.realName + "\r\n");
                 sb.Append(" * 日  期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\r\n");
                 sb.Append(" * 描  述：" + baseInfo.describe + "\r\n");
@@ -3209,8 +3209,8 @@ namespace Learun.Application.Base.CodeGeneratorModule
 
 
                 sb.Append("/*");
-                sb.Append(" * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)\r\n");
-                sb.Append(" * Copyright (c) 2013-2018 上海力软信息技术有限公司\r\n");
+                sb.Append(" * 版 本V2.3 辰星软件开发框架\r\n");
+                sb.Append(" * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司\r\n");
                 sb.Append(" * 创建人：" + userInfo.realName + "\r\n");
                 sb.Append(" * 日  期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\r\n");
                 sb.Append(" * 描  述：" + baseInfo.describe + "\r\n");
@@ -3565,8 +3565,8 @@ namespace Learun.Application.Base.CodeGeneratorModule
 
 
                 sb.Append("/*");
-                sb.Append(" * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)\r\n");
-                sb.Append(" * Copyright (c) 2013-2018 上海力软信息技术有限公司\r\n");
+                sb.Append(" * 版 本V2.3 辰星软件开发框架\r\n");
+                sb.Append(" * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司\r\n");
                 sb.Append(" * 创建人：" + userInfo.realName + "\r\n");
                 sb.Append(" * 日  期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\r\n");
                 sb.Append(" * 描  述：" + baseInfo.describe + "\r\n");

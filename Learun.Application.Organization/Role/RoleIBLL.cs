@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace Learun.Application.Organization
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2017.03.04
     /// 描 述：角色管理
     /// </summary>
@@ -22,15 +22,15 @@ namespace Learun.Application.Organization
         /// </summary>
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
-        List<RoleEntity> GetList(string keyword);
+        List<RoleEntity> GetList(string keyWord);
         /// <summary>
         /// 获取分页数据
         /// </summary>
         /// <param name="pagination">分页参数</param>
         /// <param name="keyword">查询关键词</param>
         /// <returns></returns>
-        List<RoleEntity> GetPageList(Pagination pagination, string keyword);
-         /// <summary>
+        List<RoleEntity> GetPageList(Pagination pagination, string companyId, string keyword);
+        /// <summary>
         /// 获取角色数据列表
         /// </summary>
         /// <param name="roleIds">主键串</param>

@@ -6,10 +6,10 @@ using System.Web.Mvc;
 namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2017.03.09
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2018.10.01
     /// 描 述：公司管理
     /// </summary>
     public class CompanyController : MvcControllerBase
@@ -81,6 +81,18 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
                 };
                 return Success(jsondata);
             }
+        } 
+        /// <summary>
+        /// 获取部门实体数据
+        /// </summary>
+        /// <param name="companyId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [AjaxOnly]
+        public ActionResult GetEntity(string F_CompanyId)
+        {
+            var data = companyIBLL.GetEntity(F_CompanyId);
+            return Success(data);
         }
         #endregion
 

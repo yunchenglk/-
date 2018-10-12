@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "医院信息管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap">
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">医院名称<font face="宋体">*</font></div>
+        <input id="FullName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">医院简称<font face="宋体">*</font></div>
+        <input id="ShortName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">编 码</div>
+        <input id="EnCode" type="text" readonly class="form-control" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">医院分类<font face="宋体">*</font></div>
+        <div id="Category" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">医院性质</div>
+        <div id="Nature"  ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">传真</div>
+        <input id="Fax" type="text" class="form-control" isvalid="yes" checkexpession="MobileOrPhoneOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">外线电话</div>
+        <input id="OuterPhone" type="text" class="form-control" isvalid="yes" checkexpession="MobileOrPhoneOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">内线电话</div>
+        <input id="InnerPhone" type="text" class="form-control" isvalid="yes" checkexpession="MobileOrPhoneOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">邮编</div>
+        <input id="Postalcode" type="text" class="form-control" isvalid="yes" checkexpession="NumOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">电子邮箱</div>
+        <input id="Email" type="text" class="form-control" isvalid="yes" checkexpession="EmailOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">负责人</div>
+        <input id="Manager" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">网址</div>
+        <input id="WebAddress" type="text" class="form-control" isvalid="yes" checkexpession="UriOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">成立时间</div>
+        <input id="FoundedTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#FoundedTime').trigger('change'); } })"   />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">排序</div>
+        <input id="SortCode" type="text" class="form-control" isvalid="yes" checkexpession="NumOrNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">是否删除</div>
+        <div id="F_DeleteMark"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">是否生效</div>
+        <div id="F_EnabledMark"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">创建用户</div>
+        <input id="F_CreateUserId" type="text" readonly class="form-control currentInfo lr-currentInfo-user" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">创建时间</div>
+        <input id="F_CreateDate" type="text" readonly class="form-control currentInfo lr-currentInfo-time" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">详细地址</div>
+        <input id="Address" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="c_Hospital_info" >
+        <div class="lr-form-item-title">经营范围</div>
+        <textarea id="BusinessScope" class="form-control" style="height:100px;"  ></textarea>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/A_SystemInfo/Views/c_Hospital_info/Form.js")

@@ -53,6 +53,18 @@
     <Compile Include="SystemDemo\Demoleave\DemoleaveEntity.cs" />
     <Compile Include="SystemDemo\Demoleave\DemoleaveIBLL.cs" />
     <Compile Include="SystemDemo\Demoleave\DemoleaveService.cs" />
+    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoEntity.cs" />
+    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoService.cs" />
+    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoBLL.cs" />
+    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoIBLL.cs" />
+    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryEntity.cs" />
+    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryService.cs" />
+    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryBLL.cs" />
+    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryIBLL.cs" />
+    <Compile Include="A_SystemInfo\Chargecategory\A_ChargecategoryEntity.cs" />
+    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryService.cs" />
+    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryBLL.cs" />
+    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

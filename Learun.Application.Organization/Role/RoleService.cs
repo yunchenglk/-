@@ -7,9 +7,9 @@ using System.Text;
 namespace Learun.Application.Organization
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2017.03.04
     /// 描 述：角色管理
     /// </summary>
@@ -65,14 +65,14 @@ namespace Learun.Application.Organization
                 }
             }
         }
-        public IEnumerable<RoleEntity> GetPageList(Pagination pagination, string keyword)
+        public IEnumerable<RoleEntity> GetPageList(Pagination pagination, string companyId, string keyword)
         {
             try
             {
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
                 strSql.Append(fieldSql);
-                strSql.Append(" FROM LR_Base_Role t WHERE t.F_EnabledMark = 1 AND t.F_DeleteMark = 0 ");
+                strSql.Append(" FROM LR_Base_Role t WHERE t.F_CompanyId = '" + companyId + "' AND t.F_EnabledMark = 1 AND t.F_DeleteMark = 0 ");
 
                 if (!string.IsNullOrEmpty(keyword))
                 {
@@ -80,7 +80,7 @@ namespace Learun.Application.Organization
                     strSql.Append(" AND( t.F_FullName like @keyword or t.F_EnCode like @keyword ) ");
                 }
 
-                return this.BaseRepository().FindList<RoleEntity>(strSql.ToString(),new { keyword}, pagination);
+                return this.BaseRepository().FindList<RoleEntity>(strSql.ToString(), new { keyword }, pagination);
             }
             catch (Exception ex)
             {
@@ -185,7 +185,7 @@ namespace Learun.Application.Organization
                 }
             }
 
-        } 
+        }
         #endregion
     }
 }

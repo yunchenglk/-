@@ -5,15 +5,16 @@ using System.Web.Mvc;
 namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2017.03.09
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2018.10.01
     /// 描 述：角色管理
     /// </summary>
     public class RoleController : MvcControllerBase
     {
         private RoleIBLL roleIBLL = new RoleBLL();
+        private CompanyIBLL companyIBLL = new CompanyBLL();
 
         #region 获取视图
         /// <summary>
@@ -23,6 +24,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.parentId = base.getCompanyPid();
             return View();
         }
         /// <summary>
@@ -44,7 +46,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetList(string keyword)
+        public ActionResult GetList(string companyId, string keyword)
         {
             var data = roleIBLL.GetList(keyword);
             return Success(data);
@@ -57,10 +59,10 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetPageList(string pagination, string keyword)
+        public ActionResult GetPageList(string pagination, string companyId, string keyword)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
-            var data = roleIBLL.GetPageList(paginationobj, keyword);
+            var data = roleIBLL.GetPageList(paginationobj, companyId, keyword);
             var jsonData = new
             {
                 rows = data,

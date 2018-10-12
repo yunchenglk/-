@@ -7,8 +7,8 @@ using System.Text;
 namespace Learun.Application.AppMagager
 {
     /// <summary> 
-    /// 版 本 V2.3 辰星软件开发框架 
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司 
+    /// 版 本V2.3 辰星软件开发框架 
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司 
     /// 创 建：超级管理员 
     /// 日 期：2018-06-26 10:32 
     /// 描 述：我的常用移动应用 

@@ -8,10 +8,10 @@ using System.Web.Mvc;
 namespace Learun.Application.Web.Controllers
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2017.03.09
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2018.10.01
     /// 描 述：主页控制器
     /// </summary>
     public class HomeController : MvcControllerBase
@@ -23,7 +23,7 @@ namespace Learun.Application.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         public ActionResult Index()
-        { 
+        {
             string learn_UItheme = WebHelper.GetCookie("Learn_ADMS_V6.1_UItheme");
             switch (learn_UItheme)
             {
@@ -67,6 +67,7 @@ namespace Learun.Application.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
+        [HttpGet]
         [AjaxOnly]
         public ActionResult ClearRedis()
         {
@@ -100,6 +101,11 @@ namespace Learun.Application.Web.Controllers
             logEntity.F_ExecuteResultJson = "访问地址：" + moduleUrl;
             logEntity.WriteLog();
             return Success("ok");
+        }
+        [HttpGet]
+        public JsonResult GetPinYin(string val)
+        {
+            return Json(new { data = Str.PinYin(val) }, JsonRequestBehavior.AllowGet);
         }
     }
 }

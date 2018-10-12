@@ -1,4 +1,5 @@
-﻿using Learun.Loger;
+﻿using Learun.Application.Organization;
+using Learun.Loger;
 using Learun.Util;
 using Learun.Util.Operat;
 using System.Web.Mvc;
@@ -6,15 +7,16 @@ using System.Web.Mvc;
 namespace Learun.Application.Web
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2017.03.08
     /// 描 述：基础控制器
     /// </summary>
     [HandlerLogin(FilterMode.Enforce)]
     public abstract class MvcControllerBase : Controller
     {
+        private CompanyIBLL companyIBLL = new CompanyBLL();
         #region 日志操作
         /// <summary>
         /// 日志对象实体
@@ -114,6 +116,20 @@ namespace Learun.Application.Web
         protected virtual ActionResult Fail(string info, object data)
         {
             return Content(new ResParameter { code = ResponseCode.fail, info = info, data = data }.ToJson());
+        }
+        protected string getCompanyPid()
+        {
+            string CompanyPid = "";
+
+            if (string.IsNullOrEmpty(LoginUserInfo.Get().companyId))
+            {
+                ViewBag.parentId = 0;
+            }
+            else
+            {
+                CompanyPid = companyIBLL.GetEntity(LoginUserInfo.Get().companyId).F_ParentId;
+            }
+            return string.IsNullOrEmpty(CompanyPid) ? "0" : CompanyPid;
         }
         #endregion
     }

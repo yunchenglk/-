@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace Learun.Util
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2017.03.08
     /// 描 述：当前上下文执行用户信息
     /// </summary>
@@ -71,9 +71,13 @@ namespace Learun.Util
         /// </summary>	
         public string weChat { get; set; }
         /// <summary>
-        /// 公司主键
+        /// 医院主键
         /// </summary>		
         public string companyId { get; set; }
+        /// <summary>
+        /// 医院上级ID
+        /// </summary>
+        public string companyPId { get; set; }
         /// <summary>
         /// 所在公司及下属公司
         /// </summary>

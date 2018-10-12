@@ -6,10 +6,10 @@ using System.Web.Mvc;
 namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2017.03.09
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2018.10.01
     /// 描 述：用户管理控制器
     /// </summary>
     public class UserController : MvcControllerBase
@@ -25,6 +25,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.parentId = base.getCompanyPid();
             return View();
         }
         /// <summary>
@@ -32,7 +33,8 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult Form() {
+        public ActionResult Form()
+        {
             return View();
         }
 
@@ -41,7 +43,8 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult SelectForm() {
+        public ActionResult SelectForm()
+        {
             return View();
         }
         /// <summary>
@@ -68,7 +71,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetPageList(string pagination, string keyword,string companyId,string departmentId)
+        public ActionResult GetPageList(string pagination, string keyword, string companyId, string departmentId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
             var data = userIBLL.GetPageList(companyId, departmentId, paginationobj, keyword);
@@ -203,7 +206,8 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="userId">用户主键</param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult GetImg(string userId) {
+        public ActionResult GetImg(string userId)
+        {
             userIBLL.GetImg(userId);
             return Success("获取成功。");
         }

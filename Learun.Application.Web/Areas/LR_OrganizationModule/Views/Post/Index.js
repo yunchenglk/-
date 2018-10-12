@@ -1,7 +1,7 @@
 ﻿/*
- * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
- * Copyright (c) 2013-2018 上海力软信息技术有限公司
- * 创建人：力软-前端开发组
+ * 版 本V2.3 辰星软件开发框架
+ * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+ * 创建人：辰星软件开发组
  * 日 期：2017.03.22
  * 描 述：部门管理	
  */
@@ -130,10 +130,10 @@ var bootstrap = function ($, learun) {
         inittree: function () {
             $('#companyTree').lrtree({
                 url: top.$.rootUrl + '/LR_OrganizationModule/Company/GetTree',
-                param: { parentId: '0' },
+                param: { parentId: $("#keyid").val() },
                 nodeClick: page.treeNodeClick
             });
-            $('#companyTree').lrtreeSet('setValue', '53298b7a-404c-4337-aa7f-80b2a4ca6681');
+            //$('#companyTree').lrtreeSet('setValue', '53298b7a-404c-4337-aa7f-80b2a4ca6681');
         },
         treeNodeClick: function (item) {
             companyId = item.id;

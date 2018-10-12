@@ -1,8 +1,8 @@
 ﻿/*
- * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
- * Copyright (c) 2013-2018 上海力软信息技术有限公司
- * 创建人：力软-前端开发组
- * 日 期：2017.03.16
+ * 版 本V2.3 辰星软件开发框架
+ * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+ * 创建人：辰星软件开发组
+ * 日 期：2018.10.01
  * 描 述：window窗口皮肤	
  */
 var bootstrap = function ($, learun) {
@@ -42,7 +42,7 @@ var bootstrap = function ($, learun) {
                     var secondModules = modulesTree[item.F_ModuleId] || [];
                     var $secondMenus = $('<ul class="lr-second-menu-list"></ul>');
                     var secondMenuHad = false;
-                    for (var j = 0, sl = secondModules.length ; j < sl; j++) {
+                    for (var j = 0, sl = secondModules.length; j < sl; j++) {
                         var secondItem = secondModules[j];
                         if (secondItem.F_IsMenu == 1) {
 
@@ -65,7 +65,7 @@ var bootstrap = function ($, learun) {
                             var threeModules = modulesTree[secondItem.F_ModuleId] || [];
                             var $threeMenus = $('<ul class="lr-three-menu-list"></ul>');
                             var threeMenuHad = false;
-                            for (var m = 0, tl = threeModules.length ; m < tl; m++) {
+                            for (var m = 0, tl = threeModules.length; m < tl; m++) {
                                 var threeItem = threeModules[m];
                                 if (threeItem.F_IsMenu == 1) {
                                     if (threeItem.F_Target != 'expand') {
@@ -105,7 +105,7 @@ var bootstrap = function ($, learun) {
             }
             $('#lr_frame_menu').html($firstmenus);
 
-            // 语言包翻译
+            //语言包翻译
             $('.lr-menu-item-text').each(function () {
                 var $this = $(this);
                 var text = $this.text();
@@ -223,10 +223,10 @@ var bootstrap = function ($, learun) {
             });
             $('#lr_applist_content').hide();
             $(".lr-applist-slidebox-slider-content li").eq(0).trigger('click');
-           
+
             //learun.frameTab.leaveFocus();
 
-          
+
         },
         startMenuClick: function () {
             var $lr_frame_menu = $('.lr-frame-menu');
@@ -245,7 +245,7 @@ var bootstrap = function ($, learun) {
             _html += '<i class="fa ' + item.F_Icon + '"></i>';
             _html += '</div>';
             _html += '<div class="icon-text">';
-            _html +=item.F_FullName;
+            _html += item.F_FullName;
             _html += '</div>';
             _html += '</li>';
             return _html;
@@ -281,7 +281,7 @@ var bootstrap = function ($, learun) {
     var companyMap = {};
     var departmentMap = {};
     var userMap = {};
-    
+
     var imUserId = '';
 
     var getHeadImg = function (user) {

@@ -1,7 +1,7 @@
 ﻿/*
- * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
- * Copyright (c) 2013-2018 上海力软信息技术有限公司
- * 创建人：力软-前端开发组
+ * 版 本V2.3 辰星软件开发框架
+ * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+ * 创建人：辰星软件开发组
  * 日 期：2017.04.17
  * 描 述：公司管理	
  */
@@ -29,7 +29,7 @@ var bootstrap = function ($, learun) {
                 selectedRow = null;
                 learun.layerForm({
                     id: 'Form',
-                    title: '添加公司',
+                    title: '添加医院',
                     url: top.$.rootUrl + '/LR_OrganizationModule/Company/Form',
                     width: 750,
                     height: 500,
@@ -45,7 +45,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(keyValue)) {
                     learun.layerForm({
                         id: 'Form',
-                        title: '编辑公司',
+                        title: '编辑医院',
                         url: top.$.rootUrl + '/LR_OrganizationModule/Company/Form',
                         width: 750,
                         height: 500,
@@ -73,10 +73,10 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_OrganizationModule/Company/GetList',
                 headData: [
-                    { label: "公司名称", name: "F_FullName", width: 260, align: "left" },
-                    { label: "公司编码", name: "F_EnCode", width: 150, align: "left" },
-                    { label: "公司简称", name: "F_ShortName", width: 150, align: "left" },
-                    { label: "公司性质", name: "F_Nature", width: 80, align: "center" },
+                    { label: "医院名称", name: "F_FullName", width: 260, align: "left" },
+                    { label: "医院编码", name: "F_EnCode", width: 150, align: "left" },
+                    { label: "医院简称", name: "F_ShortName", width: 150, align: "left" },
+                    { label: "医院性质", name: "F_Nature", width: 80, align: "center" },
                     {
                         label: "成立时间", name: "F_FoundedTime", width: 80, align: "center",
                         formatter: function (value) {

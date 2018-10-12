@@ -1,7 +1,7 @@
 ﻿/*
- * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
- * Copyright (c) 2013-2018 上海力软信息技术有限公司
- * 创建人：力软-前端开发组
+ * 版 本V2.3 辰星软件开发框架
+ * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+ * 创建人：辰星软件开发组
  * 日 期：2017.03.22
  * 描 述：部门管理	
  */
@@ -9,8 +9,10 @@ var selectedRow;
 var refreshGirdData;
 var bootstrap = function ($, learun) {
     "use strict";
+    var companyId = "";
     var page = {
         init: function () {
+            page.inittree();
             page.initGrid();
             page.bind();
         },
@@ -30,7 +32,7 @@ var bootstrap = function ($, learun) {
                 learun.layerForm({
                     id: 'form',
                     title: '添加角色',
-                    url: top.$.rootUrl + '/LR_OrganizationModule/Role/Form',
+                    url: top.$.rootUrl + '/LR_OrganizationModule/Role/Form?companyId=' + companyId,
                     width: 500,
                     height: 340,
                     callBack: function (id) {
@@ -61,7 +63,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(keyValue)) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
-                            learun.deleteForm(top.$.rootUrl + '/LR_OrganizationModule/Role/DeleteForm', { keyValue: keyValue}, function () {
+                            learun.deleteForm(top.$.rootUrl + '/LR_OrganizationModule/Role/DeleteForm', { keyValue: keyValue }, function () {
                                 refreshGirdData();
                             });
                         }
@@ -76,7 +78,7 @@ var bootstrap = function ($, learun) {
                     learun.layerForm({
                         id: 'form',
                         title: '添加角色成员',
-                        url: top.$.rootUrl + '/LR_AuthorizeModule/UserRelation/SelectForm?objectId=' + keyValue + '&companyId=' + loginInfo.F_CompanyId + '&departmentId=' + loginInfo.F_DepartmentId + '&category=1',
+                        url: top.$.rootUrl + '/LR_AuthorizeModule/UserRelation/SelectForm?objectId=' + keyValue + '&companyId=' + companyId + '&departmentId=' + loginInfo.F_DepartmentId + '&category=1',
                         width: 800,
                         height: 520,
                         callBack: function (id) {
@@ -181,6 +183,18 @@ var bootstrap = function ($, learun) {
                 }
             });
         },
+        inittree: function () {
+            $('#companyTree').lrtree({
+                url: top.$.rootUrl + '/LR_OrganizationModule/Company/GetTree',
+                param: { parentId: $("#keyid").val() },
+                nodeClick: page.treeNodeClick
+            });
+            //$('#companyTree').lrtreeSet('setValue', $("#keyid").val());
+        },
+        treeNodeClick: function (item) {
+            companyId = item.id;
+            page.search();
+        },
         initGrid: function () {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_OrganizationModule/Role/GetPageList',
@@ -210,6 +224,7 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
+            param.companyId = companyId;
             $('#gridtable').jfGridSet('reload', param);
         }
     };

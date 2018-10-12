@@ -1,8 +1,8 @@
 ﻿/*
- * 版 本 Learun-ADMS V7.0.0 力软敏捷开发框架(http://www.learun.cn)
- * Copyright (c) 2013-2018 上海力软信息技术有限公司
- * 创建人：力软-前端开发组
- * 日 期：2017.03.16
+ * 版 本V2.3 辰星软件开发框架
+ * Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+ * 创建人：辰星软件开发组
+ * 日 期：2018.10.01
  * 描 述：弹层（基于layer.js-3.0.3）	
  */
 (function ($, learun) {
@@ -13,7 +13,7 @@
             top.learun.language.get(_msg, function (msg) {
                 top.layer.confirm(msg, {
                     btn: ['确认', '取消'],
-                    title: "力软提示",
+                    title: "辰星提示",
                     icon: 0,
                     skin: 'lr-layer',
                     success: function (layero, index) {

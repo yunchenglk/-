@@ -3,10 +3,10 @@ using System.Collections.Generic;
 namespace Learun.Application.WorkFlow
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2018.10.10
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2017.04.17
     /// 描 述：流程引擎返回结果数据
     /// </summary>
     public class WfResult
@@ -21,10 +21,10 @@ namespace Learun.Application.WorkFlow
         public string desc { get; set; }
     }
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2018.10.10
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2017.04.17
     /// 描 述：流程引擎返回结果数据
     /// </summary>
     public class WfResult<T> where T : class
@@ -44,10 +44,10 @@ namespace Learun.Application.WorkFlow
     }
 
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2018.10.10
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2017.04.17
     /// 描 述：流程引擎返回的数据内容
     /// </summary>
     public class WfContent {

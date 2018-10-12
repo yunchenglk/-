@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Learun.Application.CRM
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
     /// 创 建：超级管理员
     /// 日 期：2017-07-11 09:58
     /// 描 述：客户联系人

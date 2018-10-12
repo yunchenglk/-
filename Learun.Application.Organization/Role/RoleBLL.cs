@@ -7,9 +7,9 @@ using System.Collections.Generic;
 namespace Learun.Application.Organization
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
     /// 日 期：2017.03.04
     /// 描 述：角色管理
     /// </summary>
@@ -66,7 +66,7 @@ namespace Learun.Application.Organization
                 List<RoleEntity> list = GetList();
                 if (!string.IsNullOrEmpty(keyword))
                 {
-                    list = list.FindAll(t => t.F_FullName.Contains(keyword) || t.F_EnCode.Contains(keyword));
+                    list = list.FindAll(t => (t.F_FullName.Contains(keyword) || t.F_EnCode.Contains(keyword)));
                 }
                 return list;
             }
@@ -88,11 +88,11 @@ namespace Learun.Application.Organization
         /// <param name="pagination">分页参数</param>
         /// <param name="keyword">查询关键词</param>
         /// <returns></returns>
-        public List<RoleEntity> GetPageList(Pagination pagination, string keyword)
+        public List<RoleEntity> GetPageList(Pagination pagination, string companyId, string keyword)
         {
             try
             {
-                return (List<RoleEntity>)roleService.GetPageList(pagination, keyword);
+                return (List<RoleEntity>)roleService.GetPageList(pagination, companyId, keyword);
             }
             catch (Exception ex)
             {
@@ -115,9 +115,9 @@ namespace Learun.Application.Organization
         {
             try
             {
-               List<RoleEntity> list = GetList();
-               list = list.FindAll(t => t.F_RoleId.Like(roleIds));
-               return list;
+                List<RoleEntity> list = GetList();
+                list = list.FindAll(t => t.F_RoleId.Like(roleIds));
+                return list;
             }
             catch (Exception ex)
             {

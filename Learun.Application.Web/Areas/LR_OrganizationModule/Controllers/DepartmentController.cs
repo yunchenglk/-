@@ -1,14 +1,15 @@
 ﻿using Learun.Application.Organization;
 using Learun.Util;
+using Learun.Util.Operat;
 using System.Web.Mvc;
 
 namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
 {
     /// <summary>
-    /// 版 本 V2.3 辰星软件开发框架
-    /// Copyright (c) 2013-2020 山西辰星软件科技有限公司
-    /// 创建人：System
-    /// 日 期：2018.10.10
+    /// 版 本V2.3 辰星软件开发框架
+    /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
+    /// 创建人：辰星科技 软件开发部
+    /// 日 期：2017.04.17
     /// 描 述：部门管理
     /// </summary>
     public class DepartmentController : MvcControllerBase
@@ -24,6 +25,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.parentId = base.getCompanyPid();
             return View();
         }
         /// <summary>
@@ -46,7 +48,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetList(string companyId,string keyword)
+        public ActionResult GetList(string companyId, string keyword)
         {
             var data = departmentIBLL.GetList(companyId, keyword);
             return Success(data);
