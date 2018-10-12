@@ -260,6 +260,7 @@
     <Compile Include="Areas\A_SystemInfo\Controllers\c_Hospital_infoController.cs" />
     <Compile Include="Areas\A_SystemInfo\Controllers\c_ChargecategoryController.cs" />
     <Compile Include="Areas\A_SystemInfo\Controllers\ChargecategoryController.cs" />
+    <Compile Include="Areas\A_SystemInfo\Controllers\A_Yaopin_KmController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\AppManager\Views\DTImg\Form.css" />
@@ -2299,6 +2300,10 @@
     <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Index.js" />
     <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Form.cshtml" />
     <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Form.js" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Index.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Index.js" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Form.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_WebChatModule\Views\User\" />

@@ -65,6 +65,10 @@
     <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryService.cs" />
     <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryBLL.cs" />
     <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryIBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmEntity.cs" />
+    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmService.cs" />
+    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
