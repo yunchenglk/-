@@ -21,7 +21,7 @@ var bootstrap = function ($, learun) {
                 }
             });
             $('#FID').lrDataSourceSelect({ code: 'getTopChargecategor',value: 'id',text: 'name' });
-            $('#F_EnabledMark').lrRadioCheckbox({
+            $('#F_EnabledMark').lrRadioCheckbox({    
                 type: 'radio',
                 code: 'YesOrNo',
             });
