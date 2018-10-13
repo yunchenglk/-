@@ -262,6 +262,7 @@
     <Compile Include="Areas\A_SystemInfo\Controllers\ChargecategoryController.cs" />
     <Compile Include="Areas\A_SystemInfo\Controllers\A_Yaopin_KmController.cs" />
     <Compile Include="Areas\A_SystemInfo\Controllers\A_Duixiang_CataController.cs" />
+    <Compile Include="Areas\A_SystemInfo\Controllers\F_DuixingController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\AppManager\Views\DTImg\Form.css" />
@@ -2309,6 +2310,10 @@
     <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Index.js" />
     <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Form.cshtml" />
     <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Form.js" />
+    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Index.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Index.js" />
+    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Form.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_WebChatModule\Views\User\" />

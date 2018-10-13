@@ -73,6 +73,10 @@
     <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataService.cs" />
     <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataBLL.cs" />
     <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataIBLL.cs" />
+    <Compile Include="A_SystemInfo\F_Duixing\A_DuixiangEntity.cs" />
+    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingService.cs" />
+    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingBLL.cs" />
+    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
