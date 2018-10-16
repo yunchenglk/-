@@ -2226,7 +2226,6 @@
     <Content Include="Areas\AppManager\Views\DTImg\Form.cshtml" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplatePC\AppCustmerCodeIndex.cshtml" />
     <Content Include="Areas\A_SystemInfo\Views\Web.config" />
-    <None Include="Properties\PublishProfiles\learunadms6.1.pubxml" />
     <Content Include="Views\LR_Content\style\lr-layer.css" />
     <Content Include="Views\UserCenter\ContactForm.css" />
     <Content Include="Views\UserCenter\ContactForm.js" />
@@ -2441,6 +2440,9 @@
       <Project>{cf8ae293-88ab-436c-9720-a8386ba5d7b7}</Project>
       <Name>Learun.Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\his发布.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

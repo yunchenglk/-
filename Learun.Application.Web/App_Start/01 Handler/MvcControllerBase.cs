@@ -117,20 +117,6 @@ namespace Learun.Application.Web
         {
             return Content(new ResParameter { code = ResponseCode.fail, info = info, data = data }.ToJson());
         }
-        protected string getCompanyPid()
-        {
-            string CompanyPid = "";
-
-            if (string.IsNullOrEmpty(LoginUserInfo.Get().companyId))
-            {
-                ViewBag.parentId = 0;
-            }
-            else
-            {
-                CompanyPid = companyIBLL.GetEntity(LoginUserInfo.Get().companyId).F_ParentId;
-            }
-            return string.IsNullOrEmpty(CompanyPid) ? "0" : CompanyPid;
-        }
         #endregion
     }
 }

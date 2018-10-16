@@ -75,9 +75,10 @@ namespace Learun.Util
         /// </summary>		
         public string companyId { get; set; }
         /// <summary>
-        /// 医院上级ID
+        /// 医院名称
         /// </summary>
-        public string companyPId { get; set; }
+        public string companyName { get; set; }
+
         /// <summary>
         /// 所在公司及下属公司
         /// </summary>

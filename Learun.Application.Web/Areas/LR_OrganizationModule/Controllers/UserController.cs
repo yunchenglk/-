@@ -25,7 +25,6 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.parentId = base.getCompanyPid();
             return View();
         }
         /// <summary>

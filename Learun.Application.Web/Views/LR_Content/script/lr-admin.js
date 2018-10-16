@@ -153,8 +153,10 @@ var loaddfimg;
 
         // 皮肤主题设置
         uitheme: function () {
-            var uitheme = top.$.cookie('Learn_ADMS_V6.1_UItheme') || '1';
-            var $setting = $('<div class="lr-theme-setting"></div>');
+         
+            var uitheme = top.$.cookie('Learn_ADMS_V6.1_UItheme') || '3';
+            alert(uitheme);
+            var $setting = $('<div class="lr-theme-setting" style="display:none"></div>');
             var $btn = $('<button class="btn btn-default"><i class="fa fa-spin fa-gear"></i></button>');
             var _html = '<div class="panel-heading">界面风格</div>';
             _html += '<div class="panel-body">';

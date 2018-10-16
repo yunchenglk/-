@@ -24,7 +24,6 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         [HttpGet]
         public ActionResult SelectForm()
         {
-            ViewBag.parentId = base.getCompanyPid();
             return View();
         }
         /// <summary>
