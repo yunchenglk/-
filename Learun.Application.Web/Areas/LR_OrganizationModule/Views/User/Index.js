@@ -9,14 +9,17 @@ var selectedRow;
 var refreshGirdData;
 var bootstrap = function ($, learun) {
     "use strict";
-    var companyId = '';
+    var companyId = $("#keyid").val();
     var departmentId = '';
 
     var page = {
         init: function () {
-            page.inittree();
+            if (companyId.length == 0) {
+                page.inittree();
+            }
             page.initGrid();
             page.bind();
+            page.search();
         },
         bind: function () {
             // 查询

@@ -173,7 +173,6 @@
     <Compile Include="Areas\AppManager\AppManagerAreaRegistration.cs" />
     <Compile Include="Areas\AppManager\Controllers\DTImgController.cs" />
     <Compile Include="Areas\AppManager\Controllers\FunctionManagerController.cs" />
-    <Compile Include="Areas\A_SystemInfo\A_SystemInfoAreaRegistration.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\AuthorizeController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\FilterIPController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\FilterTimeController.cs" />
@@ -257,12 +256,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\DataAuthorizeController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\c_Hospital_infoController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\c_ChargecategoryController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\ChargecategoryController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\A_Yaopin_KmController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\A_Duixiang_CataController.cs" />
-    <Compile Include="Areas\A_SystemInfo\Controllers\F_DuixingController.cs" />
+    <Compile Include="Areas\A_SystemInfo\Controllers\A_ChargecategoryController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\AppManager\Views\DTImg\Form.css" />
@@ -2225,7 +2219,6 @@
     <Content Include="Areas\AppManager\Views\DTImg\Index.cshtml" />
     <Content Include="Areas\AppManager\Views\DTImg\Form.cshtml" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplatePC\AppCustmerCodeIndex.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\Web.config" />
     <Content Include="Views\LR_Content\style\lr-layer.css" />
     <Content Include="Views\UserCenter\ContactForm.css" />
     <Content Include="Views\UserCenter\ContactForm.js" />
@@ -2289,30 +2282,10 @@
     <Content Include="Views\Utility\ListContentIndex.cshtml" />
     <Content Include="Views\Utility\PCDevGuideIndex.cshtml" />
     <Content Include="Views\Utility\AppDevGuideIndex.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Hospital_info\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Hospital_info\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Hospital_info\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Hospital_info\Form.js" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Chargecategory\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Chargecategory\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Chargecategory\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\c_Chargecategory\Form.js" />
-    <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\Chargecategory\Form.js" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Yaopin_Km\Form.js" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\A_Duixiang_Cata\Form.js" />
-    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Index.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Index.js" />
-    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Form.cshtml" />
-    <Content Include="Areas\A_SystemInfo\Views\F_Duixing\Form.js" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Chargecategory\Index.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Chargecategory\Index.js" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Chargecategory\Form.cshtml" />
+    <Content Include="Areas\A_SystemInfo\Views\A_Chargecategory\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_WebChatModule\Views\User\" />

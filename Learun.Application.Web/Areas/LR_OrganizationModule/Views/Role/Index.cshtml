@@ -4,17 +4,25 @@
                 ViewBag.Title = "角色管理1";
                 Layout = "~/Views/Shared/_Index.cshtml";
 }
-<div class="lr-layout lr-layout-left-center " id="lr_layout">
-    <div class="lr-layout-left">
-        <div class="lr-layout-wrap">
-            <div class="lr-layout-title lrlg ">医院信息</div>
-            <div id="companyTree" class="lr-layout-body"></div>
-        </div>
-    </div>
+@{ if (string.IsNullOrEmpty(Learun.Util.LoginUserInfo.Get().companyId))
+    {
+        @Html.Raw("<div class=\"lr-layout lr-layout-left-center\" id=\"lr_layout\">");
+        @Html.Raw("    <div class=\"lr-layout-left\">");
+        @Html.Raw("        <div class=\"lr-layout-wrap\">");
+        @Html.Raw("            <div class=\"lr-layout-title lrlg \">医院信息</div>");
+        @Html.Raw("            <div id=\"companyTree\" class=\"lr-layout-body\"></div>");
+        @Html.Raw("        </div>");
+        @Html.Raw("    </div>");
+    }
+    else
+    {
+        @Html.Raw("<div class=\"lr-layout \"  >");
+    }
+}
     <div class="lr-layout-center">
         <div class="lr-layout-wrap">
             <div class="lr-layout-title">
-                <span id="titleinfo" class="lrlg">未选择医院</span> - <span class="lrlg">角色信息</span>
+                <span id="titleinfo" class="lrlg">@Learun.Util.LoginUserInfo.Get().companyName</span> - <span class="lrlg">角色信息</span>
             </div>
             <div class="lr-layout-tool">
                 <div class="lr-layout-tool-left">
@@ -61,5 +69,6 @@
             <div class="lr-layout-body" id="gridtable"></div>
         </div>
     </div>
-</div><input type="hidden" id="keyid" value="@ViewBag.parentId" />
+</div>
+<input type="hidden" id="keyid" value="@Learun.Util.LoginUserInfo.Get().companyId" />
 @Html.AppendJsFile("/Areas/LR_OrganizationModule/Views/Role/Index.js")

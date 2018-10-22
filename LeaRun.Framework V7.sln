@@ -94,6 +94,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learun.Application.AppMagag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS", "CS\CS.csproj", "{C5742BB3-02CC-4ED6-AD74-65210CC2D6E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tool", "tool", "{D49A681A-9684-4CAD-BC0E-05C81CFBE2B6}"
+	ProjectSection(SolutionItems) = preProject
+		tool\redis-desktop-manager-0.9.5.180825.exe = tool\redis-desktop-manager-0.9.5.180825.exe
+		tool\Redis-x64-3.2.100(安装版).msi = tool\Redis-x64-3.2.100(安装版).msi
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Android = Debug|Android
@@ -875,7 +881,7 @@ Global
 		{C5742BB3-02CC-4ED6-AD74-65210CC2D6E4} = {29DFF52B-8455-4EA1-8798-3AEE210D9372}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {968C278F-4142-4DFF-96B0-B3D70A649451}
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		SolutionGuid = {968C278F-4142-4DFF-96B0-B3D70A649451}
 	EndGlobalSection
 EndGlobal

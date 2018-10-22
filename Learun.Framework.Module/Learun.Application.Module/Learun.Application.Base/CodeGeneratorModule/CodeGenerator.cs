@@ -1119,11 +1119,11 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <returns></returns>\r\n");
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string queryJson)\r\n");
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination,string companyId, string queryJson)\r\n");
                 }
                 else
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string queryJson)\r\n");
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string companyID,string queryJson)\r\n");
                 }
 
                 string content = "";
@@ -1143,11 +1143,11 @@ namespace Learun.Application.Base.CodeGeneratorModule
                     content += "                strSql.Append(\"  LEFT JOIN " + queryDbTableMap[key].name + " " + ct + " ON " + ct + "." + queryDbTableMap[key].field + " = " + pt + "." + queryDbTableMap[key].relationField + " \");\r\n";
                 }
                 // 条件查询设置
-                content += "                strSql.Append(\"  WHERE 1=1 \");\r\n";
+                content += "                strSql.Append(\"  WHERE 1=1 AND F_CompanyID = @companyId \");\r\n";
                 // 时间查询
                 content += "                var queryParam = queryJson.ToJObject();\r\n";
                 content += "                // 虚拟参数\r\n";
-                content += "                var dp = new DynamicParameters(new { });\r\n";
+                content += "                var dp = new DynamicParameters(new { companyId });\r\n";
                 if (queryData.isDate == "1" && !string.IsNullOrEmpty(queryData.DateField))
                 {
                     content += "                if (!queryParam[\"StartTime\"].IsEmpty() && !queryParam[\"EndTime\"].IsEmpty())\r\n";
@@ -2299,14 +2299,14 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// 获取列表数据\r\n");
                 sb.Append("        /// <summary>\r\n");
                 sb.Append("        /// <returns></returns>\r\n");
-                sb.Append("        IEnumerable<" + baseConfigModel.tableName + "Entity> GetList( string queryJson );\r\n");
+                sb.Append("        IEnumerable<" + baseConfigModel.tableName + "Entity> GetList( string companyID,string queryJson );\r\n");
                 // 获取列表分页数据
                 sb.Append("        /// <summary>\r\n");
                 sb.Append("        /// 获取列表分页数据\r\n");
                 sb.Append("        /// <param name=\"pagination\">分页参数</param>\r\n");
                 sb.Append("        /// <summary>\r\n");
                 sb.Append("        /// <returns></returns>\r\n");
-                sb.Append("        IEnumerable<" + baseConfigModel.tableName + "Entity> GetPageList(Pagination pagination, string queryJson);\r\n");
+                sb.Append("        IEnumerable<" + baseConfigModel.tableName + "Entity> GetPageList(Pagination pagination,string companyID, string queryJson);\r\n");
 
                 // 获取实体数据
                 sb.Append("        /// <summary>\r\n");
@@ -2424,11 +2424,11 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <returns></returns>\r\n");
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string queryJson);\r\n");
+                    sb.Append("        IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string companyID,string queryJson);\r\n");
                 }
                 else
                 {
-                    sb.Append("        IEnumerable<" + mainTable + "Entity> GetList(string queryJson);\r\n");
+                    sb.Append("        IEnumerable<" + mainTable + "Entity> GetList(string companyID,string queryJson);\r\n");
                 }
 
                 // 获取编辑列表数据
@@ -2735,11 +2735,11 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <returns></returns>\r\n");
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        IEnumerable<" + dbTable + "Entity> GetPageList(Pagination pagination, string queryJson);\r\n");
+                    sb.Append("        IEnumerable<" + dbTable + "Entity> GetPageList(Pagination pagination,string companyID, string queryJson);\r\n");
                 }
                 else
                 {
-                    sb.Append("        IEnumerable<" + dbTable + "Entity> GetList(string queryJson);\r\n");
+                    sb.Append("        IEnumerable<" + dbTable + "Entity> GetList(string companyID,string queryJson);\r\n");
                 }
 
                 // 获取实体数据
@@ -2911,9 +2911,9 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// 获取列表数据\r\n");
                 sb.Append("        /// <summary>\r\n");
                 sb.Append("        /// <returns></returns>\r\n");
-                sb.Append("        public IEnumerable<" + baseConfigModel.tableName + "Entity> GetList( string queryJson )\r\n");
+                sb.Append("        public IEnumerable<" + baseConfigModel.tableName + "Entity> GetList( string companyID,string queryJson )\r\n");
                 content = "";
-                content += "                return " + Str.FirstLower(baseConfigModel.name) + "Service.GetList(queryJson);\r\n";
+                content += "                return " + Str.FirstLower(baseConfigModel.name) + "Service.GetList(companyID,queryJson);\r\n";
                 sb.Append(getBllTry(content));
                 // 获取列表分页数据
                 sb.Append("        /// <summary>\r\n");
@@ -2921,9 +2921,9 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <param name=\"pagination\">分页参数</param>\r\n");
                 sb.Append("        /// <summary>\r\n");
                 sb.Append("        /// <returns></returns>\r\n");
-                sb.Append("        public IEnumerable<" + baseConfigModel.tableName + "Entity> GetPageList(Pagination pagination, string queryJson)\r\n");
+                sb.Append("        public IEnumerable<" + baseConfigModel.tableName + "Entity> GetPageList(Pagination pagination, string companyID,string queryJson)\r\n");
                 content = "";
-                content += "                return " + Str.FirstLower(baseConfigModel.name) + "Service.GetPageList(pagination, queryJson);\r\n";
+                content += "                return " + Str.FirstLower(baseConfigModel.name) + "Service.GetPageList(pagination, companyID,queryJson);\r\n";
                 sb.Append(getBllTry(content));
                 // 获取实体数据
                 sb.Append("        /// <summary>\r\n");
@@ -3048,13 +3048,13 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 string content = "";
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination, queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string companyID,string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination,companyID, queryJson);\r\n";
                 }
                 else
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string companyID,string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(companyID,queryJson);\r\n";
                 }
                 sb.Append(getBllTry(content));
 
@@ -3259,13 +3259,13 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 string content = "";
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination, string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination, queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetPageList(Pagination pagination,string companyID, string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination, companyID,queryJson);\r\n";
                 }
                 else
                 {
-                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + mainTable + "Entity> GetList(string companyID,string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(companyID,queryJson);\r\n";
                 }
                 sb.Append(getBllTry(content));
 
@@ -3448,13 +3448,13 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 string content = "";
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public IEnumerable<" + dbTable + "Entity> GetPageList(Pagination pagination, string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination, queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + dbTable + "Entity> GetPageList(Pagination pagination,string companyID, string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetPageList(pagination, companyID,queryJson);\r\n";
                 }
                 else
                 {
-                    sb.Append("        public IEnumerable<" + dbTable + "Entity> GetList(string queryJson)\r\n");
-                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(queryJson);\r\n";
+                    sb.Append("        public IEnumerable<" + dbTable + "Entity> GetList(string companyID,string queryJson)\r\n");
+                    content += "                return " + Str.FirstLower(baseInfo.name) + "Service.GetList(companyID, queryJson);\r\n";
                 }
                 sb.Append(getBllTry(content));
 
@@ -3780,9 +3780,9 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <returns></returns>\r\n");
                 sb.Append("        [HttpGet]\r\n");
                 sb.Append("        [AjaxOnly]\r\n");
-                sb.Append("        public ActionResult GetList( string queryJson )\r\n");
+                sb.Append("        public ActionResult GetList( string companyId,string queryJson )\r\n");
                 sb.Append("        {\r\n");
-                sb.Append("            var data = " + Str.FirstLower(baseConfigModel.name) + "IBLL.GetList(queryJson);\r\n");
+                sb.Append("            var data = " + Str.FirstLower(baseConfigModel.name) + "IBLL.GetList(companyId,queryJson);\r\n");
                 sb.Append("            return Success(data);\r\n");
                 sb.Append("        }\r\n");
 
@@ -3794,10 +3794,10 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        /// <returns></returns>\r\n");
                 sb.Append("        [HttpGet]\r\n");
                 sb.Append("        [AjaxOnly]\r\n");
-                sb.Append("        public ActionResult GetPageList(string pagination, string queryJson)\r\n");
+                sb.Append("        public ActionResult GetPageList(string pagination, string companyId,string queryJson)\r\n");
                 sb.Append("        {\r\n");
                 sb.Append("            Pagination paginationobj = pagination.ToObject<Pagination>();\r\n");
-                sb.Append("            var data = " + Str.FirstLower(baseConfigModel.name) + "IBLL.GetPageList(paginationobj, queryJson);\r\n");
+                sb.Append("            var data = " + Str.FirstLower(baseConfigModel.name) + "IBLL.GetPageList(paginationobj, companyId , queryJson);\r\n");
                 sb.Append("            var jsonData = new\r\n");
                 sb.Append("            {\r\n");
                 sb.Append("                rows = data,\r\n");
@@ -3968,10 +3968,10 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        [AjaxOnly]\r\n");
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public ActionResult GetPageList(string pagination, string queryJson)\r\n");
+                    sb.Append("        public ActionResult GetPageList(string pagination,string companyId, string queryJson)\r\n");
                     sb.Append("        {\r\n");
                     sb.Append("            Pagination paginationobj = pagination.ToObject<Pagination>();\r\n");
-                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetPageList(paginationobj, queryJson);\r\n");
+                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetPageList(paginationobj, companyId, queryJson);\r\n");
                     sb.Append("            var jsonData = new\r\n");
                     sb.Append("            {\r\n");
                     sb.Append("                rows = data,\r\n");
@@ -3984,9 +3984,9 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 }
                 else
                 {
-                    sb.Append("        public ActionResult GetList(string queryJson)\r\n");
+                    sb.Append("        public ActionResult GetList(string companyId,string queryJson)\r\n");
                     sb.Append("        {\r\n");
-                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetList(queryJson);\r\n");
+                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetList(string companyId,queryJson);\r\n");
                     sb.Append("            return Success(data);\r\n");
                     sb.Append("        }\r\n");
                 }
@@ -4435,10 +4435,10 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        [AjaxOnly]\r\n");
                 if (colData.isPage == "1") // 分页
                 {
-                    sb.Append("        public ActionResult GetPageList(string pagination, string queryJson)\r\n");
+                    sb.Append("        public ActionResult GetPageList(string pagination,string companyId, string queryJson)\r\n");
                     sb.Append("        {\r\n");
                     sb.Append("            Pagination paginationobj = pagination.ToObject<Pagination>();\r\n");
-                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetPageList(paginationobj, queryJson);\r\n");
+                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetPageList(paginationobj, companyId, queryJson);\r\n");
                     sb.Append("            var jsonData = new\r\n");
                     sb.Append("            {\r\n");
                     sb.Append("                rows = data,\r\n");
@@ -4451,9 +4451,9 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 }
                 else
                 {
-                    sb.Append("        public ActionResult GetList(string queryJson)\r\n");
+                    sb.Append("        public ActionResult GetList(string companyId,string queryJson)\r\n");
                     sb.Append("        {\r\n");
-                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetList(queryJson);\r\n");
+                    sb.Append("            var data = " + Str.FirstLower(baseInfo.name) + "IBLL.GetList(companyId,queryJson);\r\n");
                     sb.Append("            return Success(data);\r\n");
                     sb.Append("        }\r\n");
                 }
@@ -4704,26 +4704,42 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("    ViewBag.Title = \"" + baseInfo.describe + "\";\r\n");
                 sb.Append("    Layout = \"~/Views/Shared/_Index.cshtml\";\r\n");
                 sb.Append("}\r\n");
+                #region 自定义判断超级管理员
+                sb.Append("@{ if (string.IsNullOrEmpty(Learun.Util.LoginUserInfo.Get().companyId))\r\n");
+                sb.Append("     {\r\n");
+                sb.Append("         @Html.Raw(\" < div class=\\\"lr -layout lr-layout-left- center\\\" id=\\\"lr_layout\\\">\");\r\n");
+                sb.Append("         @Html.Raw(\" < div class=\\\"lr-layout-left\\\">\");\r\n");
+                sb.Append("         @Html.Raw(\" < div class=\\\"lr-layout-wrap\\\">\");\r\n");
+                sb.Append("         @Html.Raw(\" < div class=\\\"lr-layout-title lrlg \\\">医院信息</div>\");\r\n");
+                sb.Append("         @Html.Raw(\" < div id =\\\"companyTree\\\" class=\\\"lr-layout-body\\\"></div>\"); \r\n");
+                sb.Append("         @Html.Raw(\" </ div > \");\r\n");
+                sb.Append("         @Html.Raw(\" </ div > \");\r\n");
+                sb.Append("     }else{\r\n");
+                sb.Append("         @Html.Raw(\" < div class=\\\"lr-layout\\\"  >\");\r\n");
+                sb.Append("     }\r\n");
+                sb.Append("}\r\n");
+                #endregion
 
-                sb.Append("<div class=\"lr-layout " + (colData.isTree == "1" ? "lr-layout-left-center\"  id=\"lr_layout\" " : "\"") + "  >\r\n");
-                if (colData.isTree == "1") {
-                    sb.Append("    <div class=\"lr-layout-left\">\r\n");
-                    sb.Append("        <div class=\"lr-layout-wrap\">\r\n");
-                    sb.Append("            <div class=\"lr-layout-title lrlg \">树形列表</div>\r\n");
-                    sb.Append("            <div id=\"dataTree\" class=\"lr-layout-body\"></div>\r\n");
-                    sb.Append("        </div>\r\n");
-                    sb.Append("    </div>\r\n");
-                }
+                //sb.Append("<div class=\"lr-layout " + (colData.isTree == "1" ? "lr-layout-left-center\"  id=\"lr_layout\" " : "\"") + "  >\r\n");
+                //if (colData.isTree == "1") {
+                //    sb.Append("    <div class=\"lr-layout-left\">\r\n");
+                //    sb.Append("        <div class=\"lr-layout-wrap\">\r\n");
+                //    sb.Append("            <div class=\"lr-layout-title lrlg \">树形列表</div>\r\n");
+                //    sb.Append("            <div id=\"dataTree\" class=\"lr-layout-body\"></div>\r\n");
+                //    sb.Append("        </div>\r\n");
+                //    sb.Append("    </div>\r\n");
+                //}
 
                 sb.Append("    <div class=\"lr-layout-center\">\r\n");
-                sb.Append("        <div class=\"lr-layout-wrap "+ (colData.isTree == "1" ? "" : "lr-layout-wrap-notitle") + " \">\r\n");
+                //sb.Append("        <div class=\"lr-layout-wrap "+ (colData.isTree == "1" ? "" : "lr-layout-wrap-notitle") + " \">\r\n");
+                sb.Append("        <div class=\"lr-layout-wrap \">\r\n");
 
-                if (colData.isTree == "1")
-                {
+                //if (colData.isTree == "1")
+                //{
                     sb.Append("            <div class=\"lr-layout-title\">\r\n");
-                    sb.Append("                <span id=\"titleinfo\" class=\"lrlg\">列表信息</span>\r\n");
+                    sb.Append("                 <span id=\"titleinfo\" class=\"lrlg\">@Learun.Util.LoginUserInfo.Get().companyName</span> -<span class=\"lrlg\">列表信息</span>\r\n");
                     sb.Append("            </div>\r\n");
-                }
+                //}
 
                 sb.Append("            <div class=\"lr-layout-tool\">\r\n");
                 sb.Append("                <div class=\"lr-layout-tool-left\">\r\n");
@@ -4812,6 +4828,7 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("        </div>\r\n");
                 sb.Append("    </div>\r\n");
                 sb.Append("</div>\r\n");
+                sb.Append("<input type=\"hidden\" id=\"keyid\" value=\"@Learun.Util.LoginUserInfo.Get().companyId\" />\r\n");
                 sb.Append("@Html.AppendJsFile(\"/Areas/" + baseInfo.outputArea + "/Views/" + baseInfo.name + "/Index.js\")\r\n");
 
                 return sb.ToString();
@@ -4822,7 +4839,6 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 throw;
             }
         }
-
         /// <summary>
         /// 业务类创建(自定义开发模板) 
         /// </summary>
@@ -5073,6 +5089,7 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("var refreshGirdData;\r\n");
                 sb.Append("var bootstrap = function ($, learun) {\r\n");
                 sb.Append("    \"use strict\";\r\n");
+                sb.Append("    var companyId = $(\"#keyid\").val();");
                 sb.Append("    var page = {\r\n");
                 sb.Append("        init: function () {\r\n");
                 sb.Append("            page.initGird();\r\n");
@@ -5214,6 +5231,7 @@ namespace Learun.Application.Base.CodeGeneratorModule
                 sb.Append("var refreshGirdData;\r\n");
                 sb.Append("var bootstrap = function ($, learun) {\r\n");
                 sb.Append("    \"use strict\";\r\n");
+                sb.Append("    var companyId = $(\"#keyid\").val();\r\n");
 
                 if (queryData.isDate == "1")
                 {
@@ -5223,8 +5241,12 @@ namespace Learun.Application.Base.CodeGeneratorModule
 
                 sb.Append("    var page = {\r\n");
                 sb.Append("        init: function () {\r\n");
+                sb.Append("             if (companyId.length == 0) {\r\n");
+                sb.Append("                 page.inittree();\r\n");
+                sb.Append("             }\r\n");
                 sb.Append("            page.initGird();\r\n");
                 sb.Append("            page.bind();\r\n");
+                sb.Append("            page.search();");
                 sb.Append("        },\r\n");
                 sb.Append("        bind: function () {\r\n");
 
@@ -5348,7 +5370,7 @@ namespace Learun.Application.Base.CodeGeneratorModule
                             sb.Append("                learun.layerForm({\r\n");
                             sb.Append("                    id: 'form',\r\n");
                             sb.Append("                    title: '新增',\r\n");
-                            sb.Append("                    url: top.$.rootUrl + '/" + baseInfo.outputArea + "/" + baseInfo.name + "/Form',\r\n");
+                            sb.Append("                    url: top.$.rootUrl + '/" + baseInfo.outputArea + "/" + baseInfo.name + "/Form?companyId=' + companyId',\r\n");
                             sb.Append("                    width: 600,\r\n");
                             sb.Append("                    height: 400,\r\n");
                             sb.Append("                    callBack: function (id) {\r\n");
@@ -5406,6 +5428,19 @@ namespace Learun.Application.Base.CodeGeneratorModule
                     sb.Append("            });\r\n");
                 }
 
+                sb.Append("        },\r\n");
+                sb.Append("        inittree: function () {\r\n");
+                sb.Append("            $('#companyTree').lrtree({\r\n");
+                sb.Append("                url: top.$.rootUrl + '/LR_OrganizationModule/Company/GetTree',\r\n");
+                sb.Append("                param: { parentId: $(\"#keyid\").val() },\r\n");
+                sb.Append("                nodeClick: page.treeNodeClick\r\n");
+                sb.Append("            });\r\n");
+                sb.Append("            //$('#companyTree').lrtreeSet('setValue', '4cdd86d6-9aff-446b-abd1-37ad7d18bc6c');\r\n");
+                sb.Append("        },\r\n");
+                sb.Append("        treeNodeClick: function (item) {\r\n");
+                sb.Append("            companyId = item.id;\r\n");
+                sb.Append("            $('#titleinfo').text(item.text);\r\n");
+                sb.Append("            page.search();\r\n");
                 sb.Append("        },\r\n");
                 sb.Append("        // 初始化列表\r\n");
                 sb.Append("        initGird: function () {\r\n");

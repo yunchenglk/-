@@ -119,12 +119,7 @@
     <Compile Include="LR_CRM\CrmExpensesMap.cs" />
     <Compile Include="LR_CRM\CrmInvoiceMap.cs" />
     <Compile Include="LR_CRM\CrmReceivableMap.cs" />
-    <Compile Include="A_SystemInfo\c_Hospital_infoMap.cs" />
-    <Compile Include="A_SystemInfo\c_ChargecategoryMap.cs" />
     <Compile Include="A_SystemInfo\A_ChargecategoryMap.cs" />
-    <Compile Include="A_SystemInfo\A_Yaopin_KmMap.cs" />
-    <Compile Include="A_SystemInfo\A_Duixiang_CataMap.cs" />
-    <Compile Include="A_SystemInfo\A_DuixiangMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

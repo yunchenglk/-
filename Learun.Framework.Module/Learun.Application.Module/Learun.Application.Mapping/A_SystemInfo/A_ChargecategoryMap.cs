@@ -7,8 +7,8 @@ namespace  Learun.Application.Mapping
     /// 版 本V2.3 辰星软件开发框架
     /// Copyright (c) 2013-2018 山西辰星昇软件科技有限公司
     /// 创 建：超级管理员
-    /// 日 期：2018-10-12 09:41
-    /// 描 述：收费类别管理
+    /// 日 期：2018-10-19 08:37
+    /// 描 述：A_Chargecategory
     /// </summary>
     public class A_ChargecategoryMap : EntityTypeConfiguration<A_ChargecategoryEntity>
     {

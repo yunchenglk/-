@@ -53,30 +53,10 @@
     <Compile Include="SystemDemo\Demoleave\DemoleaveEntity.cs" />
     <Compile Include="SystemDemo\Demoleave\DemoleaveIBLL.cs" />
     <Compile Include="SystemDemo\Demoleave\DemoleaveService.cs" />
-    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoEntity.cs" />
-    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoService.cs" />
-    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoBLL.cs" />
-    <Compile Include="A_SystemInfo\c_Hospital_info\c_Hospital_infoIBLL.cs" />
-    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryEntity.cs" />
-    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryService.cs" />
-    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryBLL.cs" />
-    <Compile Include="A_SystemInfo\c_Chargecategory\c_ChargecategoryIBLL.cs" />
-    <Compile Include="A_SystemInfo\Chargecategory\A_ChargecategoryEntity.cs" />
-    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryService.cs" />
-    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryBLL.cs" />
-    <Compile Include="A_SystemInfo\Chargecategory\ChargecategoryIBLL.cs" />
-    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmEntity.cs" />
-    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmService.cs" />
-    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmBLL.cs" />
-    <Compile Include="A_SystemInfo\A_Yaopin_Km\A_Yaopin_KmIBLL.cs" />
-    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataEntity.cs" />
-    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataService.cs" />
-    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataBLL.cs" />
-    <Compile Include="A_SystemInfo\A_Duixiang_Cata\A_Duixiang_CataIBLL.cs" />
-    <Compile Include="A_SystemInfo\F_Duixing\A_DuixiangEntity.cs" />
-    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingService.cs" />
-    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingBLL.cs" />
-    <Compile Include="A_SystemInfo\F_Duixing\F_DuixingIBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Chargecategory\A_ChargecategoryEntity.cs" />
+    <Compile Include="A_SystemInfo\A_Chargecategory\A_ChargecategoryService.cs" />
+    <Compile Include="A_SystemInfo\A_Chargecategory\A_ChargecategoryBLL.cs" />
+    <Compile Include="A_SystemInfo\A_Chargecategory\A_ChargecategoryIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
